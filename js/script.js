@@ -7,6 +7,7 @@ window.onload = function () {
   });
 
   function startGame() {
+    const game=new Game()
     console.log("start game");
   }
 };

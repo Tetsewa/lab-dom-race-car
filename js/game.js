@@ -11,17 +11,19 @@ class Game {
     this.lives=3;
     this.gameIsOver=false;
     this.gameIntervalId=gameIntervalId;
-    this.gameLoopFrecuency=1000/60
+    this.gameLoopFrequency=1000/60
  }   
  start(){
     this.gameScreen.style.height=`${this.height}px`;
     this.gameScreen.style.width=`${this.width}px`;
+
     this.startScreen.style.display="none";
     this.gameScreen.style.displayy="block";
+
     this.gameIntervalID= setInterval(()=>{
         this.gameLoop()
         
-    }, this.gameLoopFrecuency)
+    }, this.gameLoopFrequency)
        
  }
  gameLoop(){
@@ -32,8 +34,8 @@ class Game {
         clearInterval(this.gameIntervalId)
     } 
  }
+
  update(){
 
  }
 }
-new Game=start()
