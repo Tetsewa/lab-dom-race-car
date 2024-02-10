@@ -47,9 +47,7 @@ class player{
     //for bottom position
 
 
-
-
-        this.updatePosition()
+    this.updatePosition()
     
     updatePosition(){
 
