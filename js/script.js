@@ -14,7 +14,7 @@ window.onload = function () {
 
   function startGame() {
     console.log("start game");
-    game = new Game();
+    const game = new Game();
 
     game.start();
   }

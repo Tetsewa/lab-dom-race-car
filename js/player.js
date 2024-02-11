@@ -17,39 +17,27 @@ class Player {
         this.gameScreen.appendChild(this.element)
 
 
-
-
     }
 
     move() {
+        // Update player's car position based on directionX and directionY
         this.left += this.directionX;
         this.top += this.directionY;
-
-
-        // boundaries
-
-        //for left position
+    
+        // Ensure the player's car stays within the game screen
         if (this.left < 10) {
-            this.left = 10
+          this.left = 10;
         }
-
-        //for top position
         if (this.top < 10) {
-            this.top = 10
+          this.top = 10;
         }
- //for right position
-        if(this.top > (this.gameScreen.height - 200))
-        {
-            this.top = this.gameScreen.height - 200
+        if (this.left > this.gameScreen.offsetWidth - this.width - 10) {
+          this.left = this.gameScreen.offsetWidth - this.width - 10;
         }
- //for bottom position
-        if(this.left > (this.gameScreen.width - 80))
-        {
-            this.left = this.gameScreen.width - 80
+        if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
+          this.top = this.gameScreen.offsetHeight - this.height - 10;
         }
-
     }
-
     updatePosition() {
         this.element.style.left = `${this.left}px`;
         this.element.style.top = `${this.top}px`;
