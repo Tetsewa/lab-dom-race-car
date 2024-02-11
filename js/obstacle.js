@@ -3,7 +3,6 @@ class obstacle {
     this.gameScreen = gameScreen;
     this.left = Math.floor(Math.random()*300 + 70)
     this.gameScreen = gameScreen;
-    this.left = left;
     this.top = 0;
     this.width = 100;
     this.height = 150;
@@ -18,11 +17,13 @@ class obstacle {
 }
 
 move(){
-
+this.top+=3;
+this.updatePosition()
 }
 
-updatePosition(){
-
+updatePosition() {
+    this.element.style.left = `${this.left}px`;
+    this.element.style.top = `${this.top}px`;
 }
 
 }
