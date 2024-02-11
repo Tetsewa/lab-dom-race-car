@@ -10,7 +10,7 @@ class Game {
     this.score=0;
     this.lives=3;
     this.gameIsOver=false;
-    this.gameIntervalId=gameIntervalId;
+    this.gameIntervalId=null;
     this.gameLoopFrequency=1000/60
  }   
  start(){
@@ -18,7 +18,14 @@ class Game {
     this.gameScreen.style.width=`${this.width}px`;
 
     this.startScreen.style.display="none";
-    this.gameScreen.style.displayy="block";
+    this.gameScreen.style.display="block";
+
+    this.player = new Player(
+      this.gameScreen,
+      100, 420,
+      80, 200,
+      "./images/car.png"
+    )
 
     this.gameIntervalID= setInterval(()=>{
         this.gameLoop()
